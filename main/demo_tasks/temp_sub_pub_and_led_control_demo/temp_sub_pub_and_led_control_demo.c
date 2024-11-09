@@ -420,6 +420,9 @@ static bool prvSubscribeToTopic( MQTTQoS_t xQoS,
         xCommandAdded = MQTTAgent_Subscribe( &xGlobalMqttAgentContext,
                                              &xSubscribeArgs,
                                              &xCommandParams );
+        
+        ESP_LOGI( TAG, "Sending subscribe MQTTAgent_Subscribe..." );
+
     } while( xCommandAdded != MQTTSuccess );
 
     /* Wait for acks to the subscribe message - this is optional but done here
